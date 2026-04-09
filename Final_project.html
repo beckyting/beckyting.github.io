@@ -1,0 +1,2354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Rules to Leverage: The Weaponization of U.S. Foreign Economic Policy</title>
+<style>
+  /* ── BASE ── */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #555;
+    --rule: #e0e0e0;
+    --accent: #c0392b;
+    --accent2: #2471a3;
+    --accent3: #1e8449;
+    --accent-warn: #d4ac0d;
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --tag-bg: #f0ede8;
+    --serif: 'Georgia', 'Times New Roman', serif;
+    --sans: 'Helvetica Neue', Arial, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(250,249,247,0.97);
+    border-bottom: 1px solid var(--rule);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 52px;
+  }
+  .nav-brand {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .nav-links {
+    display: flex; gap: 0.2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink-light);
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); background: var(--tag-bg); }
+
+  /* ── SECTIONS ── */
+  section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 6rem 2rem 5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  /* ── TYPOGRAPHY ── */
+  .kicker {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.6rem;
+    margin-top: 1.8rem;
+  }
+  p { margin-bottom: 1.2rem; color: var(--ink); }
+  .lead {
+    font-size: 1.18rem;
+    line-height: 1.65;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+  }
+  .byline {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── PULL QUOTE ── */
+  blockquote.pull {
+    border-left: 4px solid var(--accent);
+    padding: 0.8rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--tag-bg);
+    border-radius: 0 4px 4px 0;
+  }
+  blockquote.pull p {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── TIMELINE (HORIZONTAL) ── */
+  .timeline-wrapper {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin: 2.5rem 0 1rem;
+  }
+  .timeline {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    min-width: 700px;
+    padding-top: 3.5rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: 0; right: 0;
+    height: 2px;
+    background: var(--rule);
+  }
+  .tl-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0 0.3rem;
+    min-width: 90px;
+  }
+  .tl-year {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: center;
+    position: absolute;
+    top: -2.4rem;
+    width: 100%;
+  }
+  .tl-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 2px solid var(--accent);
+    transition: all 0.2s;
+    flex-shrink: 0;
+    position: absolute;
+    top: calc(1.5rem - 7px);
+    z-index: 2;
+  }
+  .tl-item:hover .tl-dot,
+  .tl-item.active .tl-dot {
+    background: var(--accent);
+    transform: scale(1.3);
+  }
+  .tl-content {
+    padding-top: 1.8rem;
+    text-align: center;
+    width: 100%;
+  }
+  .tl-content strong {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+  .tl-detail {
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    line-height: 1.45;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s;
+    opacity: 0;
+    text-align: left;
+    background: var(--tag-bg);
+    border-radius: 4px;
+    padding: 0 0.6rem;
+    margin-top: 0.3rem;
+  }
+  .tl-item.active .tl-detail {
+    max-height: 260px;
+    opacity: 1;
+    padding: 0.6rem;
+  }
+  .tl-tag {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin-bottom: 0.25rem;
+  }
+  .tag-episodic { background: #fdecea; color: var(--accent); }
+  .tag-systemic { background: #eaf4fb; color: var(--accent2); }
+  .tag-shift { background: #fef9e7; color: #9a7d0a; }
+
+  /* ── CHOKEPOINT MAP ── */
+  .chokepoint-map-container {
+    margin: 2rem 0 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: #0d1b2a;
+  }
+  .chokepoint-map-header {
+    background: #1a2c42;
+    padding: 0.7rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .chokepoint-map-header h4 {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #e0e8f0;
+    margin: 0;
+  }
+  .map-legend {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .map-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #8ba0b5;
+  }
+  .map-legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .map-svg-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .map-svg-wrapper svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .map-tooltip {
+    position: absolute;
+    background: rgba(10,20,35,0.95);
+    border: 1px solid #2a4a6a;
+    border-radius: 5px;
+    padding: 0.5rem 0.8rem;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: #d0e4f4;
+    line-height: 1.4;
+    max-width: 200px;
+    pointer-events: none;
+    display: none;
+    z-index: 10;
+  }
+  .map-tooltip strong { color: #fff; display: block; margin-bottom: 0.2rem; font-size: 0.76rem; }
+  .cp-marker {
+    cursor: pointer;
+    transition: filter 0.2s;
+  }
+  .cp-marker:hover { filter: brightness(1.5); }
+  .cp-marker circle { transition: r 0.2s; }
+  .cp-marker:hover circle { r: 9; }
+
+  .chokepoint-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  @media(max-width:600px){ .chokepoint-grid { grid-template-columns: 1fr; } }
+  .cp-panel {
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .cp-panel:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .cp-us { background: #eaf4fb; border-top: 3px solid var(--accent2); }
+  .cp-cn { background: #fdecea; border-top: 3px solid var(--accent); }
+  .cp-panel h4 {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .cp-us h4 { color: var(--accent2); }
+  .cp-cn h4 { color: var(--accent); }
+  .cp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+  .cp-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .cp-item-detail {
+    display: none;
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    margin-top: 0.3rem;
+    padding-left: 1.5rem;
+    line-height: 1.4;
+  }
+  .cp-item.open .cp-item-detail { display: block; }
+
+  /* ── PERSPECTIVE TABS ── */
+  .tab-bar {
+    display: flex;
+    border-bottom: 2px solid var(--rule);
+    margin-bottom: 1.5rem;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--ink-light);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+  }
+  .tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .perspective-card {
+    border-radius: 6px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .p-escalate { background: #fdecea; border-left: 4px solid var(--accent); }
+  .p-caution  { background: #eaf4fb; border-left: 4px solid var(--accent2); }
+  .p-hybrid   { background: #eafaf1; border-left: 4px solid var(--accent3); }
+  .perspective-card h4 {
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .perspective-card p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .pro-con {
+    display: flex; gap: 1rem; margin-top: 0.8rem; flex-wrap: wrap;
+  }
+  .pro, .con {
+    flex: 1; min-width: 140px;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .pro strong { color: var(--accent3); }
+  .con strong { color: var(--accent); }
+
+  /* ── RECOMMENDATION PILLARS ── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  @media(max-width:640px){ .pillars { grid-template-columns: 1fr; } }
+  .pillar {
+    border-radius: 6px;
+    padding: 1.3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .pillar:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  .p-offense  { background: #fdecea; border-top: 4px solid var(--accent); }
+  .p-defense  { background: #eaf4fb; border-top: 4px solid var(--accent2); }
+  .p-credibility { background: #eafaf1; border-top: 4px solid var(--accent3); }
+  .pillar-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .pillar h4 {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .p-offense h4 { color: var(--accent); }
+  .p-defense h4 { color: var(--accent2); }
+  .p-credibility h4 { color: var(--accent3); }
+  .pillar ul {
+    list-style: none;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+  .pillar ul li::before { content: '→ '; color: var(--ink-light); }
+  .pillar-detail {
+    display: none;
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    margin-top: 0.8rem;
+    text-align: left;
+    border-top: 1px solid var(--rule);
+    padding-top: 0.8rem;
+    line-height: 1.5;
+  }
+  .pillar.open .pillar-detail { display: block; }
+
+  /* ── TIMELINE ROADMAP ── */
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  @media(max-width:600px){ .roadmap { grid-template-columns: 1fr; } }
+  .rm-phase {
+    border-radius: 6px;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+  }
+  .rm-1 { background: #fef9e7; border-top: 3px solid var(--accent-warn); }
+  .rm-2 { background: #eaf4fb; border-top: 3px solid var(--accent2); }
+  .rm-3 { background: #eafaf1; border-top: 3px solid var(--accent3); }
+  .rm-phase h4 {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .rm-1 h4 { color: #9a7d0a; }
+  .rm-2 h4 { color: var(--accent2); }
+  .rm-3 h4 { color: var(--accent3); }
+  .rm-phase ul { list-style: none; line-height: 1.7; }
+  .rm-phase ul li::before { content: '• '; color: var(--ink-light); }
+
+  /* ── HERO ── */
+  #hero { padding-top: 8rem; border-bottom: 2px solid var(--ink); }
+  .hero-label {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.5rem;
+  }
+  .thesis-box {
+    background: var(--ink);
+    color: #fff;
+    padding: 1.4rem 1.8rem;
+    border-radius: 4px;
+    margin: 2rem 0;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .thesis-box strong { color: #f5c6c2; }
+
+  /* ── DIVIDER ── */
+  .section-rule {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .section-rule span {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    white-space: nowrap;
+  }
+  .section-rule::after {
+    content: ''; flex: 1;
+    height: 1px; background: var(--rule);
+  }
+
+  /* ── FOOTNOTE ── */
+  .footnote {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    border-top: 1px solid var(--rule);
+    padding-top: 0.8rem;
+    margin-top: 2rem;
+    line-height: 1.6;
+  }
+
+  /* ── CONCLUSION BOX ── */
+  .conclusion-box {
+    background: var(--tag-bg);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1.6rem 2rem;
+    margin: 2rem 0;
+  }
+  .conclusion-box p { font-size: 0.95rem; margin-bottom: 0.8rem; }
+  .conclusion-box p:last-child { margin-bottom: 0; }
+
+  /* ── SCROLL HINT ── */
+  .scroll-hint {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    text-align: center;
+    margin-top: 2.5rem;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(4px); }
+  }
+
+  /* ── DEEP DIVE EXPANDER ── */
+  .deepdive-trigger {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent2);
+    border-radius: 0 6px 6px 0;
+    padding: 1rem 1.4rem;
+    margin: 2.5rem 0 0;
+    cursor: pointer;
+    background: var(--tag-bg);
+    transition: background 0.2s, border-color 0.2s;
+    user-select: none;
+  }
+  .deepdive-trigger:hover { background: #ede9e3; border-left-color: var(--accent); }
+  .deepdive-trigger[aria-expanded="true"] { border-left-color: var(--accent3); background: #eafaf1; }
+  .deepdive-label {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .deepdive-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--accent2);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    transition: background 0.2s, transform 0.3s;
+    flex-shrink: 0;
+  }
+  .deepdive-trigger[aria-expanded="true"] .deepdive-icon {
+    background: var(--accent3);
+    transform: rotate(45deg);
+  }
+  .deepdive-sub {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    padding-left: 1.6rem;
+  }
+
+  /* ── DEEP DIVE PANEL ── */
+  .deepdive-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.2s cubic-bezier(0.4,0,0.2,1);
+    border-left: 4px solid var(--rule);
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .deepdive-panel.open { max-height: 9999px; }
+
+  .dd-section {
+    padding: 2.5rem 0 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .dd-section:last-child { border-bottom: none; }
+
+  .dd-section-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+  .dd-section-rule span {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    white-space: nowrap;
+  }
+  .dd-section-rule::after {
+    content: ''; flex: 1;
+    height: 1px; background: var(--rule);
+  }
+
+  .dd-h3 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 0.9rem;
+    color: var(--ink);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* ── DD CARD GRID ── */
+  .dd-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    margin: 1.8rem 0;
+  }
+  @media(max-width:640px){ .dd-card-grid { grid-template-columns: 1fr; } }
+  .dd-card {
+    border-radius: 6px;
+    padding: 1.1rem 1.2rem;
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+  .dd-card strong { display: block; margin-bottom: 0.4rem; font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .dd-card p { margin: 0; color: var(--ink-light); font-size: 0.82rem; }
+  .dd-card-icon { font-size: 1.1rem; margin-bottom: 0.4rem; }
+  .dd-card-warn { background: #fef9e7; border-top: 3px solid var(--accent-warn); }
+  .dd-card-warn strong { color: #9a7d0a; }
+  .dd-card-blue { background: #eaf4fb; border-top: 3px solid var(--accent2); }
+  .dd-card-blue strong { color: var(--accent2); }
+  .dd-card-green { background: #eafaf1; border-top: 3px solid var(--accent3); }
+  .dd-card-green strong { color: var(--accent3); }
+
+  /* ── DD TWO-COL ── */
+  .dd-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  @media(max-width:600px){ .dd-two-col { grid-template-columns: 1fr; } }
+
+  .dd-pillar-card {
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    font-size: 0.88rem;
+  }
+  .dd-pillar-card ul { list-style: none; line-height: 1.8; padding: 0; margin: 0.4rem 0 0; }
+  .dd-pillar-card ul li::before { content: '→ '; color: var(--ink-light); }
+  .dd-pillar-header {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .dd-pillar-blue { background: #eaf4fb; border-top: 4px solid var(--accent2); }
+  .dd-pillar-blue .dd-pillar-header { color: var(--accent2); }
+  .dd-pillar-red { background: #fdecea; border-top: 4px solid var(--accent); }
+  .dd-pillar-red .dd-pillar-header { color: var(--accent); }
+
+  /* ── DD VENN LABEL ── */
+  .dd-venn-label {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 1.6rem 0 0.8rem;
+  }
+
+  /* ── DD INSTRUMENT COLS ── */
+  .dd-instrument-col {
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    border-top: 3px solid;
+  }
+  .dd-instrument-blue { border-color: var(--accent2); background: #f5faff; }
+  .dd-instrument-red  { border-color: var(--accent);  background: #fff8f8; }
+  .dd-instrument-title {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .dd-instrument-blue .dd-instrument-title { color: var(--accent2); }
+  .dd-instrument-red  .dd-instrument-title { color: var(--accent); }
+  .dd-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dd-dot-blue { background: var(--accent2); }
+  .dd-dot-red  { background: var(--accent); }
+  .dd-instr-card {
+    background: var(--card);
+    border-radius: 4px;
+    border-left: 3px solid;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.6rem;
+    transition: transform 0.15s;
+  }
+  .dd-instr-card:hover { transform: translateX(3px); }
+  .dd-instrument-blue .dd-instr-card { border-left-color: var(--accent2); }
+  .dd-instrument-red  .dd-instr-card { border-left-color: var(--accent); }
+  .dd-instr-name {
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .dd-instr-goal {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    line-height: 1.4;
+  }
+
+  /* ── DD HEATMAP ── */
+  .dd-heatmap-wrap {
+    margin: 2rem 0 1rem;
+    overflow-x: auto;
+  }
+  .dd-heatmap-title {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .dd-heatmap-sub {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    color: var(--ink-light);
+    margin-bottom: 0.8rem;
+  }
+  .dd-heatmap-legend {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    color: var(--ink-light);
+  }
+  .dd-legend-bar {
+    width: 120px; height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #d8e8f5, #2471a3 50%, #c0392b);
+  }
+
+  /* ── DD ALLIANCE ── */
+  .dd-alliance-label {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 1.5rem 0 0.8rem;
+  }
+  .dd-alliance-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  @media(max-width:600px){ .dd-alliance-grid { grid-template-columns: 1fr; } }
+  .dd-tier {
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    font-size: 0.82rem;
+  }
+  .dd-tier-1 { background: #fef9e7; border-top: 3px solid var(--accent-warn); }
+  .dd-tier-2 { background: #eafaf1; border-top: 3px solid var(--accent3); }
+  .dd-tier-3 { background: #eaf4fb; border-top: 3px solid var(--accent2); }
+  .dd-tier-badge {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .dd-tier-1 .dd-tier-badge { color: #9a7d0a; }
+  .dd-tier-2 .dd-tier-badge { color: var(--accent3); }
+  .dd-tier-3 .dd-tier-badge { color: var(--accent2); }
+  .dd-tier-name { font-weight: 700; margin-bottom: 0.2rem; }
+  .dd-tier-examples { font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light); margin-bottom: 0.4rem; }
+  .dd-tier-desc { font-size: 0.78rem; color: var(--ink-light); line-height: 1.5; }
+
+  /* ── DD FLOWCHART ── */
+  .dd-flow { margin: 1rem 0; }
+  .dd-flow-row {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+  }
+  .dd-flow-node {
+    flex: 1;
+    min-width: 200px;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--rule);
+    background: var(--tag-bg);
+    margin-bottom: 0.8rem;
+    border-top: 3px solid var(--rule);
+  }
+  .dd-flow-amber { border-top-color: var(--accent-warn); background: #fef9e7; }
+  .dd-flow-blue  { border-top-color: var(--accent2); background: #eaf4fb; }
+  .dd-flow-red   { border-top-color: var(--accent);  background: #fdecea; }
+  .dd-flow-purple{ border-top-color: #7c3aed; background: #f5f0ff; }
+  .dd-flow-orange{ border-top-color: #d97706; background: #fffbeb; }
+  .dd-flow-tag {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.3rem;
+  }
+  .dd-flow-amber .dd-flow-tag { color: #9a7d0a; }
+  .dd-flow-blue  .dd-flow-tag { color: var(--accent2); }
+  .dd-flow-red   .dd-flow-tag { color: var(--accent); }
+  .dd-flow-purple .dd-flow-tag { color: #7c3aed; }
+  .dd-flow-orange .dd-flow-tag { color: #d97706; }
+  .dd-flow-name {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .dd-flow-desc {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    line-height: 1.55;
+  }
+  .dd-flow-connector {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    text-align: center;
+    padding: 0.4rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .dd-flow-connector::before, .dd-flow-connector::after {
+    content: ''; flex: 1; height: 1px; background: var(--rule);
+  }
+  .dd-flow-arrow {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--ink-light);
+    padding: 0.3rem 0;
+  }
+
+  /* ── DD CAVEATS ── */
+  .dd-caveat {
+    background: #fdecea;
+    border: 1px solid #f5c6c2;
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    margin-top: 1.2rem;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  .dd-caveat-green { background: #eafaf1; border-color: #a9dfbf; }
+  .dd-caveat-tag {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  /* ── EXPANDABLE TIER CARDS ── */
+  .dd-tier {
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .dd-tier:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); transform: translateY(-2px); }
+  .dd-tier-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dd-tier-chevron {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+  .dd-tier.open .dd-tier-chevron { transform: rotate(180deg); }
+  .dd-tier-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s;
+    opacity: 0;
+  }
+  .dd-tier.open .dd-tier-body { max-height: 300px; opacity: 1; }
+
+  /* ── EXPANDABLE PRIVATE SECTOR BOXES ── */
+  .ps-box {
+    background: var(--card);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent3);
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+  }
+  .ps-box:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
+  .ps-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+  }
+  .ps-box-title {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent3);
+  }
+  .ps-box-chevron {
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+  .ps-box.open .ps-box-chevron { transform: rotate(180deg); }
+  .ps-box-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s;
+    opacity: 0;
+    padding: 0 1rem;
+  }
+  .ps-box.open .ps-box-body { max-height: 300px; opacity: 1; padding: 0 1rem 0.9rem; }
+
+  /* ── EXPANDABLE CAVEATS ── */
+  .dd-caveat-expander {
+    border-radius: 6px;
+    margin-top: 1.2rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+  }
+  .dd-caveat-expander:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.07); }
+  .dd-caveat-expander.caveat-red { background: #fdecea; border: 1px solid #f5c6c2; }
+  .dd-caveat-expander.caveat-green { background: #eafaf1; border: 1px solid #a9dfbf; }
+  .dd-caveat-expander-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.4rem;
+  }
+  .dd-caveat-expander-tag {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .caveat-red  .dd-caveat-expander-tag { color: var(--accent); }
+  .caveat-green .dd-caveat-expander-tag { color: var(--accent3); }
+  .dd-caveat-expander-chevron {
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    transition: transform 0.25s;
+  }
+  .dd-caveat-expander.open .dd-caveat-expander-chevron { transform: rotate(180deg); }
+  .dd-caveat-expander-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s;
+    opacity: 0;
+  }
+  .dd-caveat-expander.open .dd-caveat-expander-body { max-height: 600px; opacity: 1; }
+  .dd-caveat-expander-body-inner {
+    padding: 0 1.4rem 1.2rem;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  .dd-caveat-expander-body-inner p { margin-bottom: 0.7rem; }
+  .dd-caveat-expander-body-inner p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Economic Statecraft</span>
+  <ul class="nav-links">
+    <li><a href="#history">History</a></li>
+    <li><a href="#chokepoints">Chokepoints</a></li>
+    <li><a href="#now">Now</a></li>
+    <li><a href="#perspectives">Perspectives</a></li>
+    <li><a href="#recommendation">Recommendation</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section id="hero">
+  <div class="hero-label">Policy Analysis · April 2026</div>
+  <h1>From Rules to Leverage</h1>
+  <h1 style="color:var(--accent); margin-top:-0.4rem;">The Weaponization of U.S. Foreign Economic Policy</h1>
+  <div class="byline">By Becky Ting, Nathaniel Pendleton, Jennifer Gao, Ayush Dubey &nbsp;·&nbsp; April 7, 2026</div>
+  <p class="lead">Executive Summary</p>
+  <p class="lead">The United States has long used economic power as a tool of statecraft. But something has changed. What was once episodic and purposeful has become routine and increasingly untethered from any defined strategic end.</p>
+
+  <div class="thesis-box">
+    <strong>The core argument:</strong> Economic weaponization is not new but today's version is different. The U.S. now deploys its structural chokepoints on the global economy as a default instrument of foreign policy, without a clear blueprint for the order it wants to build or the behavior it wants to change. This is not a strategy. Leverage for leverage's sake has consequences.
+  </div>
+
+  <p>This analysis traces how we got here, maps the chokepoints at stake, surveys competing perspectives. Our policy recommendation is built on three pillars: <strong>Offense </strong> - using current American leverages to maximise U.S. benefits, <strong>Defense </strong>- defending U.S. economic vulnerabilities, and <strong>Credibility </strong> - restoring U.S. government's credibility with other nation states and the private sector. It also assumes that once a nation state starts weaponising its economic policies, it'll spread across other countries and is hard to contain.</p>
+
+  <div class="scroll-hint">↓ scroll to explore</div>
+</section>
+
+<!-- ═══════════════════════════════ HISTORY ═══════════════════════════════ -->
+<section id="history">
+  <div class="section-rule"><span>Part I</span></div>
+  <span class="kicker">Historical Foundation</span>
+  <h2>Economic coercion didn't start with tariffs. </h2>
+
+  <p class="lead">From Lend-Lease to the Suez Crisis to the Russia sanctions of 2022, the United States has wielded economic power against adversaries and allies alike, but each with a clear end goal.</p>
+
+  <p>Click each event to expand its strategic significance:</p>
+
+  <div class="timeline-wrapper"><div class="timeline">
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-year">1941</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag tag-episodic">Episodic</span>
+        <strong>Lend-Lease Act</strong>
+        <div class="tl-detail">The U.S. supplied Allied powers with war materiel in exchange for political alignment. Economic power was deployed with the goal of defeating the Axis and anchor a U.S.-led postwar order. The tool served the strategy.</div>
+      </div>
+    </div>
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-year">1944</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag tag-systemic">Systemic</span>
+        <strong>Bretton Woods &amp; Dollar Primacy</strong>
+        <div class="tl-detail">The postwar financial architecture embedded the dollar as the global reserve currency, giving the U.S. structural leverage over every nation that traded in dollar-denominated markets. This was the foundation of the US chokepoint that still exists today.</div>
+      </div>
+    </div>
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-year">1956</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag tag-episodic">Episodic</span>
+        <strong>Suez Crisis</strong>
+        <div class="tl-detail">The U.S. threatened to withhold IMF support for a collapsing British pound unless the UK withdrew from the Suez Canal. Britain complied within days. Economic leverage deployed surgically with a defined target and a defined desired behavior change.</div>
+      </div>
+    </div>
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-year">1971</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag tag-shift">Structural Shift</span>
+        <strong>Nixon Shock</strong>
+        <div class="tl-detail">Nixon unilaterally ended dollar-gold convertibility, demonstrating that the U.S. was willing to restructure the global financial system unilaterally when it served domestic interests, even at the cost of allies' interests.</div>
+      </div>
+    </div>
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-year">1985</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag tag-episodic">Episodic</span>
+        <strong>Plaza Accord</strong>
+        <div class="tl-detail">The U.S. coordinated with G5 partners to depreciate the dollar against the yen and deutschmark, correcting global trade imbalances through coordinated currency intervention. Coercion with multilateral buy-in — the model that defenders of re-institutionalization still invoke today.</div>
+      </div>
+    </div>
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-year">2022</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag tag-shift">Structural Shift</span>
+        <strong>Russia Sanctions &amp; Asset Freezes</strong>
+        <div class="tl-detail">Following Russia's invasion of Ukraine, the U.S. and allies froze ~$300B in Russian central bank assets and expelled Russia from SWIFT. The scale and speed signaled that dollar-denominated assets were no longer safe from geopolitical risks, a message heard loudly in Beijing, Riyadh, and beyond.</div>
+      </div>
+    </div>
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-year">2025–</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag tag-shift">Structural Shift</span>
+        <strong>Trump II: Weaponization Without Blueprint</strong>
+        <div class="tl-detail">Under Trump's second term, tariffs, sanctions, and export controls are deployed simultaneously across allies and adversaries alike, with competing visions inside the administration itself. Protectionism, dealmaking, hawkishness, and skepticism coexist without resolution. The tool has become the policy, not the instrument of a policy.</div>
+      </div>
+    </div>
+  </div></div><!-- end timeline + wrapper -->
+
+</section>
+
+<!-- ═══════════════════════════════ CHOKEPOINTS ═══════════════════════════════ -->
+<section id="chokepoints">
+  <div class="section-rule"><span>Part II</span></div>
+  <span class="kicker">The Architecture of Leverage</span>
+  <h2>The global economy runs through a handful of chokepoints. The U.S. controls most of them but not all.</h2>
+
+  <p class="lead"> Understanding who controls what economic chokepoints helps us understand how economonic policies can be weaponised.</p>
+
+  <p>Click any item to see how the chokepoint is weaponized in practice:</p>
+
+  <div class="chokepoint-grid">
+
+    <!-- US CHOKEPOINTS -->
+    <div class="cp-panel cp-us">
+      <h4>🇺🇸 U.S.-Controlled Chokepoints</h4>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">💵</span>
+        <div>
+          <strong>Dollar &amp; SWIFT Payment Rails</strong>
+          <div class="cp-item-detail">~88% of global FX transactions involve dollars. SWIFT exclusion can functionally cut a country off from the international financial system. Weaponized against Iran (2012), Russia (2022), and threatened against others. The risk: overuse erodes the dollar's status as a safe asset.</div>
+        </div>
+      </div>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">⚖️</span>
+        <div>
+          <strong>Legal-Jurisdictional Reach</strong>
+          <div class="cp-item-detail">U.S. courts and regulators can reach entities that touches the dollar system, including foreign banks. Secondary sanctions extend this jurisdiction further, threatening non-U.S. firms that do business with sanctioned parties. Functionally a global regulatory chokepoint.</div>
+        </div>
+      </div>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">🔬</span>
+        <div>
+          <strong>Frontier Technology</strong>
+          <div class="cp-item-detail">Export controls on advanced semiconductors (the October 2022 and subsequent Commerce Dept. rules) restrict China's access to chips needed for AI and military applications. The U.S. controls this chokepoint through EDA software, chip design IP, and equipment made by ASML (Netherlands) and Applied Materials — though allies must remain coordinated.</div>
+        </div>
+      </div>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">🏪</span>
+        <div>
+          <strong>U.S. Market Access</strong>
+          <div class="cp-item-detail">Access to the world's largest consumer market ($27T GDP) is used as leverage through tariffs, import quotas, and WTO threats. Tariffs are the most visible but, as Fishman argues, the weakest form of leverage: they are economically costly, politically visible, and easily routed around.</div>
+        </div>
+      </div>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">🛡️</span>
+        <div>
+          <strong>Security Umbrella</strong>
+          <div class="cp-item-detail">U.S. military presence and alliance commitments, NATO, the Pacific alliances, generate diplomatic leverage. Allies pay a form of geopolitical rent for this protection, which creates leverage in trade and technology negotiations. Risk: if credibility erodes, so does this chokepoint.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHINA / FOREIGN CHOKEPOINTS -->
+    <div class="cp-panel cp-cn">
+      <h4>⚠️ Foreign Chokepoints / U.S. Vulnerabilities</h4>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">⛏️</span>
+        <div>
+          <strong>Critical Minerals Ecosystem</strong>
+          <div class="cp-item-detail">China controls not just mining but the full value chain: processing, magnet production, licensing, and downstream manufacturing. This is an <em>ecosystem chokepoint</em> that cannot be quickly replicated. Rare earths, lithium processing, and permanent magnets are the acute vulnerabilities.</div>
+        </div>
+      </div>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">🏭</span>
+        <div>
+          <strong>Manufacturing Dominance</strong>
+          <div class="cp-item-detail">China produces the majority of the world's batteries, EVs, solar panels, and active pharmaceutical ingredients. Disruption would cascade across industries from defense to healthcare. Unlike frontier chips, these are commodity-scale dependencies.</div>
+        </div>
+      </div>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">🇹🇼</span>
+        <div>
+          <strong>Taiwan Semiconductor Concentration</strong>
+          <div class="cp-item-detail">TSMC produces the majority of the world's leading-edge chips. A Taiwan contingency — blockade, conflict, or coercive pressure — would disrupt global semiconductor supply in ways the CHIPS Act alone cannot quickly remedy. </div>
+        </div>
+      </div>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">💊</span>
+        <div>
+          <strong>Pharmaceutical Ingredients</strong>
+          <div class="cp-item-detail">China and India supply the majority of active pharmaceutical ingredients (APIs) and precursor chemicals. U.S. dependence on Chinese API supply is particularly acute for generic drugs, antibiotics, and some biologics, a vulnerability that became visible during COVID-19.</div>
+        </div>
+      </div>
+
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">🌊</span>
+        <div>
+          <strong>Undersea Cables </strong>
+          <div class="cp-item-detail">95%+ of global internet traffic travels through undersea cables vulnerable to sabotage and hard to defense. </div>
+        </div>
+      </div>
+      <div class="cp-item" onclick="toggleCP(this)">
+        <span class="cp-icon">💵</span>
+        <div>
+          <strong> Treasury Holdings</strong>
+          <div class="cp-item-detail"> Foreign ownership of U.S. Treasuries creates a potential financial pressure point, though large-scale dumping would hurt the other nations too. These are asymmetric vulnerabilities: cheap to threaten, expensive to defend.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- GEOGRAPHIC MAP -->
+  <div class="chokepoint-map-container" style="overflow:visible;">
+    <div class="chokepoint-map-header">
+      <h4>🌐 Geographic Chokepoint Map</h4>
+      <div class="map-legend">
+        <div class="map-legend-item"><div class="map-legend-dot" style="background:#4a9edd;"></div> U.S. Controlled</div>
+        <div class="map-legend-item"><div class="map-legend-dot" style="background:#e05252;"></div> China / Vulnerability</div>
+        <div class="map-legend-item"><div class="map-legend-dot" style="background:#f0c040;"></div> Contested / Shared</div>
+      </div>
+    </div>
+    <div class="map-svg-wrapper" style="position:relative; background:#0b1929;">
+      <div class="map-tooltip" id="mapTooltip"></div>
+      <div id="realistic-map" style="width:100%; height:450px; position:relative;"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+  <script>
+  function initMap() {
+    const container = document.getElementById('realistic-map');
+    if (!container) return;
+    // Use offsetWidth for reliable rendered width; fall back to section max-width
+    const W = container.offsetWidth || container.parentElement?.offsetWidth || 860;
+    const H = 450;
+
+    const svg = d3.select('#realistic-map').append('svg')
+      .attr('width', '100%')
+      .attr('height', H)
+      .attr('viewBox', `0 0 ${W} ${H}`)
+      .style('background', '#0b1929')
+      .style('display', 'block');
+
+    // Ocean gradient
+    const defs = svg.append('defs');
+    const grad = defs.append('radialGradient').attr('id','oceanGrad')
+      .attr('cx','50%').attr('cy','50%').attr('r','70%');
+    grad.append('stop').attr('offset','0%').attr('stop-color','#112840');
+    grad.append('stop').attr('offset','100%').attr('stop-color','#07111e');
+    svg.append('rect').attr('width',W).attr('height',H).attr('fill','url(#oceanGrad)');
+
+    const projection = d3.geoNaturalEarth1()
+      .scale(W / 6.28)
+      .translate([W / 2, H / 2 + 20]);
+
+    const path = d3.geoPath().projection(projection);
+
+    // Graticule
+    const graticule = d3.geoGraticule().step([20, 20]);
+    svg.append('path').datum(graticule())
+      .attr('d', path)
+      .attr('fill', 'none')
+      .attr('stroke', '#1a3a5c')
+      .attr('stroke-width', 0.3)
+      .attr('opacity', 0.6);
+
+    // Blue palette for countries — varied shades like the reference image
+    const bluePalette = [
+      '#1a4a7a','#1e5a8e','#2471a3','#1b6ca8','#12507a',
+      '#0e3d5e','#1c5580','#2980b9','#1a6090','#145374',
+      '#0d4f7c','#1e6091','#236fa1','#195d8a','#154e75',
+    ];
+
+    function countryColor(id) {
+      // Assign varied blues based on country id
+      return bluePalette[id % bluePalette.length];
+    }
+
+    // Chokepoint markers config — mapped to projected coordinates
+    const chokepoints = [
+      { id:'swift',    label:'Dollar & SWIFT',         type:'us',     icon:'$',  geo:[-77, 38.9],  desc:'~88% of global FX transactions involve dollars. SWIFT exclusion can sever a country from the international financial system.' },
+      { id:'tech',     label:'Frontier Technology',    type:'us',     icon:'⚡', geo:[-122, 37.4], desc:'Export controls on advanced semiconductors, EDA software, and chip-design IP.' },
+      { id:'asml',     label:'ASML / EUV (Netherlands)',type:'shared', icon:'⚙️', geo:[5.5, 52.3],  desc:'ASML holds a near-monopoly on EUV lithography machines essential for cutting-edge chip fabrication.' },
+      { id:'tsmc',     label:'Taiwan — TSMC',          type:'vuln',   icon:'🇹🇼', geo:[121, 23.7],  desc:'TSMC produces the majority of the world\'s leading-edge chips. The highest-consequence single chokepoint.' },
+      { id:'minerals', label:'China — Critical Minerals',type:'vuln', icon:'⛏️', geo:[116, 40],    desc:'China controls the full rare earth value chain: mining, processing, magnet production.' },
+      { id:'mfg',      label:'China — Manufacturing',  type:'vuln',   icon:'🏭', geo:[121, 31.2],  desc:'China produces the majority of world batteries, mature-node semiconductors, and pharmaceutical ingredients.' },
+      { id:'hormuz',   label:'Strait of Hormuz',       type:'shared', icon:'🛢️', geo:[56.5, 26.5], desc:'~20% of global oil supply passes through this 33-mile wide strait.' },
+      { id:'malacca',  label:'Malacca Strait',          type:'shared', icon:'🚢', geo:[103.8, 1.3], desc:'Over $5T in trade transits this narrow waterway annually.' },
+      { id:'suez',     label:'Suez Canal (Egypt)',      type:'shared', icon:'⚓', geo:[32.5, 30.0], desc:'~12% of world trade passes through the Suez Canal.' },
+      { id:'cable',    label:'Undersea Cable Nodes',   type:'shared', icon:'🌊', geo:[-9, 38.7],   desc:'95%+ of global internet traffic travels through undersea cables. Cheap to threaten, expensive to defend.' },
+      { id:'pharma',   label:'India — Pharma APIs',    type:'vuln',   icon:'💊', geo:[78.9, 20.6], desc:'India and China together supply most active pharmaceutical ingredients. A vulnerability exposed by COVID-19.' },
+    ];
+
+    const markerColors = { us: '#4a9edd', vuln: '#e05252', shared: '#f0c040' };
+    const markerTextColors = { us: '#ffffff', vuln: '#ffffff', shared: '#1a1a1a' };
+
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+      .then(r => r.json())
+      .then(world => {
+        const countries = topojson.feature(world, world.objects.countries);
+
+        // Draw countries
+        svg.append('g').selectAll('path')
+          .data(countries.features)
+          .join('path')
+          .attr('d', path)
+          .attr('fill', d => countryColor(+d.id))
+          .attr('stroke', '#0b1929')
+          .attr('stroke-width', 0.4)
+          .attr('opacity', 0.9);
+
+        // Draw chokepoint markers
+        const tip = document.getElementById('mapTooltip');
+        const mapEl = document.getElementById('realistic-map');
+
+        chokepoints.forEach(cp => {
+          const [px, py] = projection(cp.geo);
+          if (!px || !py) return;
+
+          const g = svg.append('g')
+            .attr('transform', `translate(${px},${py})`)
+            .style('cursor','pointer');
+
+          // Pulse ring
+          g.append('circle')
+            .attr('r', 10)
+            .attr('fill', markerColors[cp.type])
+            .attr('opacity', 0.2);
+
+          // Main dot
+          g.append('circle')
+            .attr('r', 7)
+            .attr('fill', markerColors[cp.type])
+            .attr('opacity', 0.92)
+            .attr('stroke', '#0b1929')
+            .attr('stroke-width', 1);
+
+          // Icon text
+          const isEmoji = cp.icon.length > 1;
+          g.append('text')
+            .attr('text-anchor','middle')
+            .attr('dy', isEmoji ? '0.35em' : '0.38em')
+            .attr('font-size', isEmoji ? 8 : 9)
+            .attr('font-family','sans-serif')
+            .attr('fill', markerTextColors[cp.type])
+            .attr('font-weight','bold')
+            .text(cp.icon);
+
+          // Tooltip interactions
+          g.on('mouseenter', function(event) {
+            const rect = mapEl.getBoundingClientRect();
+            const svgRect = mapEl.querySelector('svg').getBoundingClientRect();
+            const scaleX = svgRect.width / W;
+            const scaleY = svgRect.height / H;
+            let left = (px * scaleX) + 12;
+            let top = (py * scaleY) - 10;
+            if (left + 215 > svgRect.width) left = px * scaleX - 220;
+            tip.innerHTML = `<strong style="color:${markerColors[cp.type]}">${cp.label}</strong>${cp.desc}`;
+            tip.style.display = 'block';
+            tip.style.left = left + 'px';
+            tip.style.top = top + 'px';
+
+            d3.select(this).select('circle:nth-child(2)').attr('r', 9);
+          })
+          .on('mouseleave', function() {
+            tip.style.display = 'none';
+            d3.select(this).select('circle:nth-child(2)').attr('r', 7);
+          });
+        });
+
+        // Undersea cable lines
+        const cables = [
+          [[-77,38.9],[-9,38.7]],
+          [[-9,38.7],[5.5,52.3]],
+          [[5.5,52.3],[32.5,30.0]],
+          [[32.5,30.0],[56.5,26.5]],
+          [[78.9,20.6],[103.8,1.3]],
+          [[103.8,1.3],[121,23.7]],
+        ];
+        cables.forEach(([a,b]) => {
+          const pa = projection(a), pb = projection(b);
+          if (!pa || !pb) return;
+          svg.append('line')
+            .attr('x1',pa[0]).attr('y1',pa[1])
+            .attr('x2',pb[0]).attr('y2',pb[1])
+            .attr('stroke','#4a9edd').attr('stroke-width',0.8)
+            .attr('stroke-dasharray','4,3').attr('opacity',0.25);
+        });
+      })
+      .catch(() => {
+        // Fallback text if CDN fails
+        svg.append('text').attr('x',W/2).attr('y',H/2)
+          .attr('text-anchor','middle').attr('fill','#8ba0b5')
+          .attr('font-family','sans-serif').attr('font-size',14)
+          .text('Map requires network access to load country data.');
+      });
+  }
+
+  // Run after full layout so offsetWidth is reliable
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    // Small rAF delay ensures the browser has painted and widths are settled
+    requestAnimationFrame(() => requestAnimationFrame(initMap));
+  }
+  </script>
+  <div class="footnote">Sources: <br>Kuok, Lynn. "The New Arteries of Power: Subsea Cables Are This Century's Hidden Battleground." Foreign Affairs, January 2, 2026.<br>
+  Aggarwal, Vinod K., and Andrew W. Reddie. "New Economic Statecraft: Industrial Policy in an Era of Strategic Competition." Issues & Studies: A Social Science Quarterly on China, Taiwan, and East Asian Affairs 56, no. 2 (June 2020): 2040006.
+  </div>
+</section>
+<section id="now">
+  <div class="section-rule"><span>Part III</span></div>
+  <span class="kicker">The Present Moment</span>
+  <h2>The tools are the same. The strategy is conflicting.</h2>
+
+  <p class="lead">Under Trump's second term, the full arsenal — tariffs, export controls, sanctions, CFIUS reviews, market access threats — is being deployed simultaneously, against allies and adversaries alike, by an administration with <strong>four competing internal visions</strong> and no unified doctrine.</p>
+
+  <h3>Four Competing Visions Inside the Administration</h3>
+
+  <style>
+    .admin-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+    }
+    @media(max-width:600px){ .admin-cards { grid-template-columns: 1fr; } }
+    .admin-card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .admin-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .admin-card-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .admin-avatar {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      flex-shrink: 0;
+      border: 3px solid transparent;
+    }
+    .admin-card.c-hawk { border-top: 4px solid var(--accent); }
+    .admin-card.c-hawk .admin-avatar { border-color: var(--accent); }
+    .admin-card.c-dealmaker { border-top: 4px solid var(--accent2); }
+    .admin-card.c-dealmaker .admin-avatar { border-color: var(--accent2); }
+    .admin-card.c-protectionist { border-top: 4px solid var(--accent3); }
+    .admin-card.c-protectionist .admin-avatar { border-color: var(--accent3); }
+    .admin-card.c-skeptic { border-top: 4px solid var(--accent-warn); }
+    .admin-card.c-skeptic .admin-avatar { border-color: var(--accent-warn); }
+    .admin-avatar-fallback {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      border: 3px solid transparent;
+      font-family: var(--sans);
+    }
+    .admin-card.c-hawk .admin-avatar-fallback { background: #fdecea; border-color: var(--accent); color: var(--accent); }
+    .admin-card.c-dealmaker .admin-avatar-fallback { background: #eaf4fb; border-color: var(--accent2); color: var(--accent2); }
+    .admin-card.c-protectionist .admin-avatar-fallback { background: #eafaf1; border-color: var(--accent3); color: var(--accent3); }
+    .admin-card.c-skeptic .admin-avatar-fallback { background: #fef9e7; border-color: var(--accent-warn); color: var(--accent-warn); }
+    .admin-card-meta {
+      flex: 1;
+    }
+    .admin-vision-badge {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 2px;
+      margin-bottom: 0.25rem;
+    }
+    .c-hawk .admin-vision-badge { background: #fdecea; color: var(--accent); }
+    .c-dealmaker .admin-vision-badge { background: #eaf4fb; color: var(--accent2); }
+    .c-protectionist .admin-vision-badge { background: #eafaf1; color: var(--accent3); }
+    .c-skeptic .admin-vision-badge { background: #fef9e7; color: #9a7d0a; }
+    .admin-name {
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: block;
+      line-height: 1.2;
+    }
+    .admin-title {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      line-height: 1.3;
+      margin-top: 0.15rem;
+    }
+    .admin-card-body {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+    .admin-card-body ul {
+      margin: 0.4rem 0 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .admin-card-body ul li {
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.25rem;
+      color: var(--ink-light);
+      font-size: 0.8rem;
+    }
+    .admin-card-body ul li::before { content: '•'; position: absolute; left: 0; }
+    .c-hawk ul li::before { color: var(--accent); }
+    .c-dealmaker ul li::before { color: var(--accent2); }
+    .c-protectionist ul li::before { color: var(--accent3); }
+    .c-skeptic ul li::before { color: var(--accent-warn); }
+  </style>
+
+  <div class="admin-cards">
+
+    <!-- THE HAWK: Marco Rubio -->
+    <div class="admin-card c-hawk">
+      <div class="admin-card-top">
+        <div class="admin-avatar-fallback">MR</div>
+        <div class="admin-card-meta">
+          <span class="admin-vision-badge">🔴 The Hawk</span>
+          <span class="admin-name">Marco Rubio</span>
+          <div class="admin-title">Secretary of State</div>
+        </div>
+      </div>
+      <div class="admin-card-body">
+        Export controls and financial sanctions as instruments of structural rivalry.
+        <ul>
+          <li>Focused on America's status as Greatest Power</li>
+          <li>Sees tariffs and export controls as tools to contain perceived adversaries like China, Venezuela, and Cuba</li>
+          <li>Willing to go along with weaponization against allies, if it also targets opponents</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- THE DEALMAKER: Scott Bessent -->
+    <div class="admin-card c-dealmaker">
+      <div class="admin-card-top">
+        <div class="admin-avatar-fallback">SB</div>
+        <div class="admin-card-meta">
+          <span class="admin-vision-badge">🔵 The Dealmaker</span>
+          <span class="admin-name">Scott Bessent</span>
+          <div class="admin-title">Secretary of the Treasury</div>
+        </div>
+      </div>
+      <div class="admin-card-body">
+        Tariffs and threats as opening bids for bilateral deals. Leverage is transactional, not structural.
+        <ul>
+          <li>Sees tariffs and chokepoints as leverage in wide-ranging negotiations with trading partners</li>
+          <li>Views critical mineral independence as a priority, to reduce Chinese leverage in negotiations</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- THE PROTECTIONIST: Peter Navarro -->
+    <div class="admin-card c-protectionist">
+      <div class="admin-card-top">
+        <div class="admin-avatar-fallback">PN</div>
+        <div class="admin-card-meta">
+          <span class="admin-vision-badge">🟢 The Protectionist</span>
+          <span class="admin-name">Peter Navarro</span>
+          <div class="admin-title">Sr. Counselor for Trade &amp; Manufacturing</div>
+        </div>
+      </div>
+      <div class="admin-card-body">
+        Tariffs as industrial policy. The focus is reshoring manufacturing, not foreign policy.
+        <ul>
+          <li>"Economic security is national security"</li>
+          <li>Believes tariffs and export controls will rebuild U.S. manufacturing and reduce strategic risk</li>
+          <li>Guided by a vision of mid-20th century American prosperity supported by industry</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- THE SKEPTIC: Howard Lutnick -->
+    <div class="admin-card c-skeptic">
+      <div class="admin-card-top">
+        <div class="admin-avatar-fallback">HL</div>
+        <div class="admin-card-meta">
+          <span class="admin-vision-badge">🟡 The Skeptic</span>
+          <span class="admin-name">Howard Lutnick</span>
+          <div class="admin-title">Secretary of Commerce</div>
+        </div>
+      </div>
+      <div class="admin-card-body">
+        Wary of over-reach. Excessive weaponization erodes U.S. credibility and accelerates de-risking.
+        <ul>
+          <li>Sometimes dismissive of economic weaponization as "mutual assured annoyance"</li>
+          <li>Wary of disruption to supply chains and financial markets that trade wars will cause</li>
+          <li>Believes economic flexibility and innovation can overcome adversaries' dominance in specific areas</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <p>Strategic liability: Allies cannot calibrate their own exposure to U.S. networks when they see no consistency. South Korea, Japan, and the Netherlands are already hedging.</p>
+  <div class="footnote">Sources: <br>Associated Press. “Marco Rubio defends potential impact of US tariffs on NATO military spending,” April 25, 2025. URL: https://www.youtube.com/watch?v=RoYztK2G3CE <br>
+CNBC Television. “Economic security is national security, says Peter Navarro,” January 21, 2025. URL: https://www.youtube.com/watch?v=3pkywfrAtFw <br>
+CSIS. “Secretary Howard Lutnick on Critical Minerals & American Economic Security,” February 3, 2026. URL: https://www.youtube.com/watch?v=UiJV4WjTGoI <br>
+DRM News. “Scott Bessent Speaks at WEF on U.S. Tariffs & Sanctions, Rare Earths, AI,” January 20, 2026. URL: https://www.youtube.com/watch?v=c0cE6ukfy7g</div>
+</section>
+
+<!-- ═══════════════════════════════ PERSPECTIVES ═══════════════════════════════ -->
+<section id="perspectives">
+  <div class="section-rule"><span>Part IV</span></div>
+  <span class="kicker">Competing Perspectives</span>
+  <h2>Three schools of thought and why none is sufficient alone.</h2>
+
+  <p class="lead">There is no consensus among strategists on how the U.S. should manage its economic toolkit. The debate maps onto three coherent but incomplete positions. Select each to explore the logic, risks, and limits:</p>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab(this,'t-escalate')">Escalate Leverage</button>
+    <button class="tab-btn" onclick="switchTab(this,'t-caution')">Caution Against Overreach</button>
+    <button class="tab-btn" onclick="switchTab(this,'t-hybrid')">Hybrid Model</button>
+  </div>
+
+  <div id="t-escalate" class="tab-panel active">
+    <div class="perspective-card p-escalate">
+      <h4>🔴 Escalate: Press the Advantage Now</h4>
+      <p>The U.S. holds structural dominance in finance and frontier technology. China is closing the gap. The window for effective coercion is finite, perhaps a decade. The U.S. should expand export controls, tighten SWIFT access, extend CFIUS screening, and exploit these advantages before rivals mature their counter-leverage.</p>
+      <p><em>"The semiconductor lead is real but temporary. Every year of inaction is a year of convergence."</em></p>
+      <div class="pro-con">
+        <div class="pro"><strong>↑ Logic</strong><br>Chokepoint advantages decay. Structural leverage should be deployed while it is maximal. The Russia sanctions demonstrated that the tools work at scale.</div>
+        <div class="con"><strong>↓ Risk</strong><br>Accelerates adversary de-risking. Signals to neutral countries that U.S. network participation is dangerous. Over use of SWIFT and asset freezes erodes the dollar's perceived neutrality — the foundation of U.S. financial power.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="t-caution" class="tab-panel">
+    <div class="perspective-card p-caution">
+      <h4>🔵 Caution: Overreach Destroys the Foundation</h4>
+      <p>Economic coercion is self-limiting. Every time the U.S. weaponizes a chokepoint, it provides incentives for building alternatives. E.g. China's mBridge digital currency project and bilateral currency swaps. The U.S. is accelerating the erosion of its own structural advantages.</p>
+      <p><em>"Dollar dominance rests on the perception that dollar-denominated transactions are safe. Routine asset freezes undermine that perception."</em></p>
+      <div class="pro-con">
+        <div class="pro"><strong>↑ Logic</strong><br>Credibility and predictability are what make U.S. networks attractive. Voluntary alignment cannot be coerced into existence. Allies that feel bullied look for exits.</div>
+        <div class="con"><strong>↓ Risk</strong><br>Without coercive tools, U.S. leverage in competitive rivalry is limited to market incentives alone. This may be insufficient against a state-directed adversary willing to absorb economic pain.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="t-hybrid" class="tab-panel">
+    <div class="perspective-card p-hybrid">
+      <h4>🟢 Hybrid: Coercion With Guardrails</h4>
+      <p>The U.S. should maintain aggressive coercion against adversaries while imposing guardrails on how allies are treated — transparency, advance warning, reversible sanctions, and consistency. Offense without credibility destroys the coalition; credibility without offense surrenders the field.</p>
+      <p><em>"The weaponization of economic statecraft is like opening Pandora’s box—once unleashed, it compels others to follow, setting off a chain reaction that is exceedingly difficult to contain."</em></p>
+      <div class="pro-con">
+        <div class="pro"><strong>↑ Logic</strong><br>Combines the real benefits of coercive leverage against adversaries with the coalition maintenance needed to preserve the structural advantages that make coercion effective in the first place.</div>
+        <div class="con"><strong>↓ Risk</strong><br>Requires internal coherence and institutional discipline that the current administration has not demonstrated. Without consistent doctrine, "hybrid" defaults to ad hoc escalation in practice.</div>
+      </div>
+    </div>
+  </div>
+  <div class="footnote">Sources: <br>Hass, Ryan. "Three Potential Pathways for US-China Relations under Trump." Brookings Institution, January 26, 2026.</div>
+</section>
+<section id="recommendation">
+  <div class="section-rule"><span>Part V</span></div>
+  <span class="kicker">Policy Recommendation</span>
+  <h2>Disciplined, Transitional Weaponization built on three pillars.</h2>
+
+  <div class="lead" id="deepDivePanel">
+
+    <!-- §1 THE CASE -->
+    <div class="dd-section">
+      <div class="dd-section-rule"><span>01 — The Strategic Context</span></div>
+      <h3 class="dd-h3">The Case for a Coherent Grand Strategy</h3>
+      <p>The United States has accumulated a vast toolkit of economic and security instruments over the past three decades. A coherent grand strategy that coordinates these tools toward defined ends and sustains that coordination across administrations can maximise U.S competitive advantages.</p>
+
+      <p>Right now, each administration inherits a set of tools, improvises new ones, and leaves behind a patchwork of authorities and commitments that the next administration must either ignore, repudiate, or absorb into its own framework. The result is strategic discontinuity — rivals can wait out any single administration; allies cannot rely on commitments that may not survive the next election.</p>
+ 
+      <div class="dd-card-grid">
+        <div class="dd-card dd-card-warn">
+          <div class="dd-card-icon">⚠</div>
+          <strong>The Ad Hoc Failure </strong>
+          <p>Examples: Tariffs imposed for domestic politics undermine export controls justified on security grounds. Investment restrictions fragment allied supply chains needed for collective resilience.</p>
+        </div>
+        <div class="dd-card dd-card-blue">
+          <div class="dd-card-icon">⚙</div>
+          <strong>Why Coherence Matters</strong>
+          <p>A coherent framework allows allies to coordinate, industries to plan, Congress to legislate, and adversaries to accurately read deterrent signals. Coherence multiplies the effectiveness of any single instrument by embedding it in a recognizable strategic logic.</p>
+        </div>
+        <div class="dd-card dd-card-green">
+          <div class="dd-card-icon">⏱</div>
+          <strong>Durability Across Cycles</strong>
+          <p>Strategies that survive election cycles are institutionalized, not merely announced. They are embedded in legislation, alliance frameworks, and bureaucratic routines that persist regardless of which party holds the executive. It is also better insulated from power abuse from the executive branch.</p>
+        </div>
+      </div>
+
+      <p>The recommendation that follows proposes a framework "Defense and Offense" that organizes existing and near-term instruments into a two-pillar logic, specifies which instruments belong where, and identifies the institutional and legislative architecture required to make that logic durable.</p>
+    </div>
+
+    <!-- §2 FRAMEWORK -->
+    <div class="dd-section">
+      <div class="dd-section-rule"><span>02 — The Framework</span></div>
+      <h3 class="dd-h3">Introducing the Framework: Defense &amp; Offense</h3>
+      <p>American strategic instruments can be organised into two complementary functions: </p>
+        <p><strong style="color:var(--accent2);">Defense</strong>: protecting critical infrastructure, supply chains, and technological advantages from foreign exploitation. </p>
+        <p><strong style="color:var(--accent);">Offense</strong>: actively shaping the international environment to expand American influence, lock in allied cooperation, and constrain rivals' strategic options.</p>
+
+      <p>The pairing matters because Defense alone is brittle: it can slow adversarial gains but cannot produce American advantages. Offense alone is wasteful: investments made without protecting the underlying technological base are easily appropriated. They are mutually reinforcing.</p>
+
+      
+
+    <!-- §3 INSTRUMENTS -->
+    <div class="dd-section">
+      <div class="dd-section-rule"><span>03 — What Goes Where</span></div>
+      <h3 class="dd-h3">Instruments, Assignments, Strategic Goals</h3>
+      <p>Each instrument in the American strategic toolkit can be sorted in to one pillar or the other based on its primary function — whether it denies adversaries capability (Defense) or builds American and allied advantage (Offense).</p>
+
+      <div class="dd-two-col" style="margin-top:1.5rem;">
+        <div class="dd-instrument-col dd-instrument-blue">
+          <div class="dd-instrument-title"><span class="dd-dot dd-dot-blue"></span>Defense — Deny &amp; Protect</div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">Export Controls (BIS/EAR/ITAR)</div>
+            <div class="dd-instr-goal">Deny adversaries access to dual-use and military-critical technologies</div>
+          </div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">CFIUS Investment Screening</div>
+            <div class="dd-instr-goal">Block foreign acquisitions that would transfer control of critical assets</div>
+          </div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">Sanctions Architecture (OFAC)</div>
+            <div class="dd-instr-goal">Impose financial costs on adversarial state actors and enablers</div>
+          </div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">Critical Infrastructure Protection</div>
+            <div class="dd-instr-goal">Harden networks, grids, and logistics against sabotage and espionage</div>
+          </div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">Outbound Investment Screening</div>
+            <div class="dd-instr-goal">Prevent capital and expertise flows that accelerate rival military-tech programs</div>
+          </div>
+        </div>
+        <div class="dd-instrument-col dd-instrument-red">
+          <div class="dd-instrument-title"><span class="dd-dot dd-dot-red"></span>Offense — Build &amp; Expand</div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">CHIPS &amp; Science Act Authorities</div>
+            <div class="dd-instr-goal">Rebuild domestic semiconductor capacity; anchor allied chip ecosystem</div>
+          </div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">DFC (Development Finance Corp.)</div>
+            <div class="dd-instr-goal">Compete with BRI in emerging markets; extend U.S. economic influence</div>
+          </div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">Section 301 / 232 Tariff Leverage</div>
+            <div class="dd-instr-goal">Extract trade concessions; deter unfair practices; signal resolve</div>
+          </div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">Alliance Industrial Integration</div>
+            <div class="dd-instr-goal">Deepen supply chain interdependence with Tier 1 allies; raise exit costs</div>
+          </div>
+          <div class="dd-instr-card">
+            <div class="dd-instr-name">International Standards Bodies</div>
+            <div class="dd-instr-goal">Set global technology norms that advantage American and allied firms</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dd-heatmap-wrap">
+        <div class="dd-heatmap-title">Policy Tool × Strategic Objective Heatmap</div>
+        <div class="dd-heatmap-sub">Hover cells for details. Color intensity = strength of relationship.</div>
+        <div id="dd-heatmap"></div>
+        <div class="dd-heatmap-legend">
+          <span>Low</span>
+          <div class="dd-legend-bar"></div>
+          <span>High</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- §4 IMPLEMENTATION -->
+    <div class="dd-section">
+      <div class="dd-section-rule"><span>04 — Implementation</span></div>
+      <h3 class="dd-h3">Allies, Private Sector, and Institutions</h3>
+      <p>The Defense-Offense framework cannot be implemented by the U.S. government alone. It requires <strong>alliances</strong> that turns bilateral relationships into industrial coalition; a <strong>private-sector collaboration</strong>, and an <strong>institutional architecture</strong> that gives the framework statutory permanence while constraining executive overreach.</p>
+
+      <!-- PILLAR A: ALLIES -->
+      <div style="margin:2rem 0 0.5rem; padding:1rem 1.4rem; background:#eaf4fb; border-top:3px solid var(--accent2); border-radius:6px;">
+        <div style="font-family:var(--sans); font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.8rem;">A — Allied Industrial Base: The Force Multiplier</div>
+        <p style="font-size:0.92rem; margin-bottom:0.8rem;">No single country can match China's manufacturing scale, supply chain integration, or state-directed capital deployment. The U.S. competitive advantage lies in its <em>network</em>. Allied industrial capacity, when coordinated, creates a combined base that rivals China across semiconductors, critical minerals, advanced materials, and defense platforms.</p>
+        <p style="font-size:0.92rem; margin-bottom:0.8rem;">Concretely: Japan and South Korea anchor the semiconductor ecosystem — TSMC's Arizona fabs, Samsung's Texas expansion, and Tokyo Electron's equipment supply are only viable within a U.S.-allied framework. The EU's battery gigafactory buildout reduces Western dependence on Chinese cell production. Australia's critical minerals extraction, processed through allied refining capacity, breaks China's rare-earth value chain monopoly. Co-investment serves both private commercial interest and national interests.</p>
+        <p style="font-size:0.92rem; margin-bottom:0;"> Future Implication: China is transitioning to smart manufacturing. Allied industrial bases along with U.S. technology are crucial to compete in the next era of industrial competition. </p>
+      </div>
+
+      
+      <div class="dd-alliance-label">
+  Differentiated Economic Security Partnerships 
+  <span style="font-weight:400; text-transform:none; letter-spacing:0; color:var(--ink-light);">
+    — click each tier to expand
+  </span>
+</div>
+
+<div class="dd-alliance-grid">
+
+  <!-- Tier 1 -->
+  <div class="dd-tier dd-tier-1" onclick="toggleExpand(this)">
+    <div class="dd-tier-header">
+      <div>
+        <div class="dd-tier-badge">Tier 1 — Deep Integration Partners</div>
+        <div class="dd-tier-name">Five Eyes · Key NATO Allies</div>
+        <div class="dd-tier-examples" style="margin-top:0.3rem;">
+          UK · Canada · Australia · Germany · France
+        </div>
+      </div>
+      <span class="dd-tier-chevron">▼</span>
+    </div>
+    <div class="dd-tier-body">
+      <div class="dd-tier-desc" style="margin-top:0.7rem; padding-top:0.7rem; border-top:1px solid rgba(0,0,0,0.07);">
+        High-trust environments enabling intelligence sharing, defense-industrial cooperation, and selective alignment of investment screening and export controls. Coordination is intensive and politically complex, but supports joint capability development and supply chain resilience across allied economies.
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 2 -->
+  <div class="dd-tier dd-tier-2" onclick="toggleExpand(this)">
+    <div class="dd-tier-header">
+      <div>
+        <div class="dd-tier-badge">Tier 2 — High-Alignment Economic Partners</div>
+        <div class="dd-tier-name">Japan · South Korea · EU · Australia</div>
+        <div class="dd-tier-examples" style="margin-top:0.3rem;">
+          Also: Netherlands (ASML) · Taiwan (TSMC)
+        </div>
+      </div>
+      <span class="dd-tier-chevron">▼</span>
+    </div>
+    <div class="dd-tier-body">
+      <div class="dd-tier-desc" style="margin-top:0.7rem; padding-top:0.7rem; border-top:1px solid rgba(0,0,0,0.07);">
+        Strong alignment in key sectors (e.g., semiconductors, advanced manufacturing), with increasing coordination on export controls and supply chain security. Cooperation is issue-specific rather than universal, balancing national industrial priorities with shared economic security concerns.
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 3 -->
+  <div class="dd-tier dd-tier-3" onclick="toggleExpand(this)">
+    <div class="dd-tier-header">
+      <div>
+        <div class="dd-tier-badge">Tier 3 — Selective & Emerging Partners</div>
+        <div class="dd-tier-name">India · Brazil · Gulf States · Vietnam</div>
+        <div class="dd-tier-examples" style="margin-top:0.3rem;">
+          Also: Indonesia · Mexico · Morocco
+        </div>
+      </div>
+      <span class="dd-tier-chevron">▼</span>
+    </div>
+    <div class="dd-tier-body">
+      <div class="dd-tier-desc" style="margin-top:0.7rem; padding-top:0.7rem; border-top:1px solid rgba(0,0,0,0.07);">
+        Engagement focused on supply chain diversification, infrastructure investment, and standards cooperation. Alignment is pragmatic and varies by sector, with partners balancing relationships across major powers while participating in targeted economic security initiatives.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <!-- PILLAR B: PRIVATE SECTOR -->
+      <div style="margin:2rem 0 0.5rem; padding:1rem 1.4rem; background:#eafaf1; border-top:3px solid var(--accent3); border-radius:6px;">
+        <div style="font-family:var(--sans); font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent3); margin-bottom:0.8rem;">B — Private Sector: From Compliance Target to Strategic Partner</div>
+        <p style="font-size:0.92rem; margin-bottom:0.8rem;">Economic statecraft only works if companies comply, not just with the letter of policies, but with their intent. The government cannot anticipate every workaround. After the West severed nearly every economic interaction with Russia in 2022, Russian imports from China surged 64 percent since 2021 as companies found alternative routes. Export controls and outbound investment restrictions will work only for a limited time without continual updating as countries and industries adapt.</p>
+        <p style="font-size:0.92rem; margin-bottom:0.8rem;">The traditional government-business relationship is not adequate for an era in which companies must make long-term investment decisions in real time, often without clear guidance on where policy is heading. We propose the following four measures for improvements.</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+          <div class="ps-box" onclick="toggleExpand(this)">
+            <div class="ps-box-header">
+              <span class="ps-box-title">Commerce Consultation Office</span>
+              <span class="ps-box-chevron">▼</span>
+            </div>
+            <div class="ps-box-body">
+              <p style="font-size:0.82rem; color:var(--ink-light); margin:0; line-height:1.55;">A dedicated channel at Commerce where companies can have open dialogue with policymakers — with assurance that raising an issue will not trigger regulatory scrutiny. Destigmatizes early consultation. Modeled on the Cyber Safety Review Board (DHS/CISA), which brings together public and private cybersecurity experts for structured dialogue without enforcement penalty.</p>
+            </div>
+          </div>
+
+          <div class="ps-box" onclick="toggleExpand(this)">
+            <div class="ps-box-header">
+              <span class="ps-box-title">Policy Intent Disclosure Requirement</span>
+              <span class="ps-box-chevron">▼</span>
+            </div>
+            <div class="ps-box-body">
+              <p style="font-size:0.82rem; color:var(--ink-light); margin:0; line-height:1.55;">Every new economic security measure must include a published statement of intent and objective — specifying the targeted behavior, the sector scope, and the success criteria. This is not bureaucratic overhead; it is the precondition for companies following the spirit of the rule. The PSIRS framework (below) codifies this into statute.</p>
+            </div>
+          </div>
+
+          <div class="ps-box" onclick="toggleExpand(this)">
+            <div class="ps-box-header">
+              <span class="ps-box-title">Supply Chain Annual Stress Tests</span>
+              <span class="ps-box-chevron">▼</span>
+            </div>
+            <div class="ps-box-body">
+              <p style="font-size:0.82rem; color:var(--ink-light); margin:0; line-height:1.55;">The Commerce Department's Supply Chain Center should conduct annual stress tests of critical supply chains — modelling how they would weather geopolitical disruptions — and share the results with industry partners. Requires increased funding; the BIS budget has been flat for a decade despite a dramatic expansion of its mandate.</p>
+            </div>
+          </div>
+
+          <div class="ps-box" onclick="toggleExpand(this)">
+            <div class="ps-box-header">
+              <span class="ps-box-title">Economic Intelligence Capacity</span>
+              <span class="ps-box-chevron">▼</span>
+            </div>
+            <div class="ps-box-body">
+              <p style="font-size:0.82rem; color:var(--ink-light); margin:0; line-height:1.55;">Washington must invest in gathering economic intelligence — understanding China's domestic development of critical technologies and how Beijing is exploiting regulatory loopholes. Better intelligence reduces surprise, enables anticipatory policy updates, and allows companies to receive earlier guidance on emerging risk areas before restrictions are announced.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PILLAR C: INSTITUTIONS -->
+      <div style="margin:2rem 0 0.5rem; padding:1rem 1.4rem; background:#fef9e7; border-top:3px solid var(--accent-warn); border-radius:6px;">
+        <div style="font-family:var(--sans); font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#9a7d0a; margin-bottom:0.8rem;">C — Institutional Architecture: Durability and Constraint</div>
+        <p style="font-size:0.92rem; margin-bottom:1rem;">The framework requires a new statutory body to coordinate instruments across agencies and across administrations. But before making the case, it is worth asking: <em>don't we already have bodies that do this?</em></p>
+
+        <!-- EXISTING BODIES TABLE -->
+        <div style="font-family:var(--sans); font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#9a7d0a; margin-bottom:0.6rem;">
+  Existing Bodies and Structural Limitations
+</div>
+
+<div style="overflow-x:auto; margin-bottom:1.2rem;">
+  <table style="width:100%; border-collapse:collapse; font-family:var(--sans); font-size:0.78rem; line-height:1.5;">
+    <thead>
+      <tr style="background:#fef3c7; border-bottom:2px solid #d4ac0d;">
+        <th style="text-align:left; padding:0.5rem 0.7rem; font-weight:700; color:#9a7d0a;">Body</th>
+        <th style="text-align:left; padding:0.5rem 0.7rem; font-weight:700; color:#9a7d0a;">What It Does</th>
+        <th style="text-align:left; padding:0.5rem 0.7rem; font-weight:700; color:#9a7d0a;">Structural Limitation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #e8e0c8;">
+        <td style="padding:0.5rem 0.7rem; font-weight:700; vertical-align:top;">
+          NEC<br><span style="font-weight:400; color:var(--ink-light);">Nat'l Economic Council</span>
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--ink-light); vertical-align:top;">
+          Coordinates domestic &amp; international economic policy; advises the President; aligns economic agenda implementation across agencies.
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--accent); vertical-align:top;">
+          White House–based coordination body without statutory authority. Effective at alignment, but lacks durable institutional capacity and formal mandate to integrate economic and national security tools across agencies.
+        </td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #e8e0c8; background:#fffdf5;">
+        <td style="padding:0.5rem 0.7rem; font-weight:700; vertical-align:top;">
+          NSC PCCs<br><span style="font-weight:400; color:var(--ink-light);">Policy Coordination Committees</span>
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--ink-light); vertical-align:top;">
+          Main day-to-day interagency forum for national security policy; chaired by NSC staff at assistant secretary level.
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--accent); vertical-align:top;">
+          Core coordination mechanism, but process-driven rather than decision-making. Cannot resolve structural interagency conflicts or eliminate veto points; effectiveness depends on NSC leadership and varies across administrations.
+        </td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #e8e0c8;">
+        <td style="padding:0.5rem 0.7rem; font-weight:700; vertical-align:top;">
+          CFIUS
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--ink-light); vertical-align:top;">
+          Reviews foreign investment transactions for national security risk; can block or impose conditions on deals.
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--accent); vertical-align:top;">
+          Expanded mandate (post-FIRRMA) strengthens investment screening, but remains transaction-based and reactive. Does not coordinate broader economic security strategy across export controls, sanctions, or allied policy alignment.
+        </td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #e8e0c8; background:#fffdf5;">
+        <td style="padding:0.5rem 0.7rem; font-weight:700; vertical-align:top;">
+          BIS / SIES<br><span style="font-weight:400; color:var(--ink-light);">Commerce Dept.</span>
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--ink-light); vertical-align:top;">
+          Administers export controls (EAR), supports national security reviews, and participates in interagency processes including CFIUS.
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--accent); vertical-align:top;">
+          Central to export controls but operates within a fragmented interagency system. Limited authority to align tools such as sanctions (Treasury), investment screening (CFIUS), and industrial policy; capacity constraints persist despite expanded responsibilities.
+        </td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #e8e0c8;">
+        <td style="padding:0.5rem 0.7rem; font-weight:700; vertical-align:top;">
+          DoD GIES<br><span style="font-weight:400; color:var(--ink-light);">Global Inv. &amp; Econ. Security</span>
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--ink-light); vertical-align:top;">
+          Assesses adversarial investment risks; protects the Defense Industrial Base; provides national security analysis in interagency reviews.
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--accent); vertical-align:top;">
+          Focused on defense industrial base and national security risk analysis. Limited mandate to shape broader civilian supply chains or coordinate economy-wide economic security strategy.
+        </td>
+      </tr>
+
+      <tr style="background:#fffdf5;">
+        <td style="padding:0.5rem 0.7rem; font-weight:700; vertical-align:top;">
+          DHS TES<br><span style="font-weight:400; color:var(--ink-light);">Trade &amp; Econ. Security</span>
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--ink-light); vertical-align:top;">
+          Leads supply chain resilience efforts, enforces trade-related security measures, and participates in interagency investment and telecom reviews.
+        </td>
+        <td style="padding:0.5rem 0.7rem; color:var(--accent); vertical-align:top;">
+          Strong operational and enforcement role, but primarily defensive in scope. Not structured to lead upstream policy design or coordinate cross-border industrial and allied economic strategy.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+        <p style="font-size:0.88rem; margin-bottom:0.8rem;"><strong>The verdict:</strong> Taken together, these institutions form a capable but fragmented system—strong in individual tools, but limited in integrating economic and national security strategy across domains and time horizons.</p>
+      </div>
+
+      <div class="dd-alliance-label" style="margin-top:2rem;">Institutional &amp; Legislative Architecture</div>
+      <div class="dd-flow">
+        <div class="dd-flow-row">
+          <div class="dd-flow-node dd-flow-amber">
+            <div class="dd-flow-tag">Legislative Authority</div>
+            <div class="dd-flow-name">Permanent interagency body</div>
+            <div class="dd-flow-desc"><em>established by statute</em> — not executive order — to coordinate Defense and Offense instruments across agencies. Fills the gap left by the NEC (executive order only, no cross-pillar mandate) and the NSC PCCs (working groups, not standing authority). Reports independently to both NSC and Congress; removes single-agency veto points; survives administration transitions by virtue of its legislative foundation. Includes mandatory quarterly strategic reviews and ally consultation protocols.</div>
+          </div>
+          <div class="dd-flow-node dd-flow-blue">
+            <div class="dd-flow-tag">Trade Leverage</div>
+            <div class="dd-flow-name">Section 301 / 232</div>
+            <div class="dd-flow-desc">Retains executive flexibility for rapid response to unfair trade practices and national security threats. Codified procedural requirements prevent purely political deployment; sunset provisions force periodic justification.</div>
+          </div>
+        </div>
+        <div class="dd-flow-connector">Coordinated through the interagency body</div>
+        <div class="dd-flow-row">
+          <div class="dd-flow-node dd-flow-red">
+            <div class="dd-flow-tag">Industrial Policy Authority</div>
+            <div class="dd-flow-name">CHIPS-Style Authorities</div>
+            <div class="dd-flow-desc">Sector-specific programs: semiconductor fabs, battery supply chains, critical minerals processing, advanced materials. Includes guardrails against subsidy competition with Tier 1/2 allies; requires allied co-investment for major grants. Private-sector applicants must demonstrate compliance with PSIRS intent-disclosure requirements.</div>
+          </div>
+          <div class="dd-flow-node dd-flow-purple">
+            <div class="dd-flow-tag">Offensive Finance</div>
+            <div class="dd-flow-name">DFC (Expanded)</div>
+            <div class="dd-flow-desc">Development Finance Corporation with expanded mandate and higher lending cap. Explicit authority to coordinate with Tier 2/3 ally development banks. Primary instrument for BRI competition in strategic corridors and critical mineral regions. Projects must demonstrate both commercial viability and strategic benefit — serving private-sector returns and national security simultaneously.</div>
+          </div>
+        </div>
+        <div class="dd-flow-connector">Gated by PSIRS before execution</div>
+        <div class="dd-flow-row">
+          <div class="dd-flow-node dd-flow-orange" style="flex:1;">
+            <div class="dd-flow-tag">Executive Constraint &amp; Transparency Gate</div>
+            <div class="dd-flow-name">PSIRS — Private Sector Intervention Review Standard</div>
+            <div class="dd-flow-desc">Statutory gate applied to any government intervention in a competitive private market above a defined threshold. Modeled on NEPA's environmental review logic applied to industrial policy. Every qualifying action must satisfy three codified criteria before execution: <strong>narrow scope</strong> (limited to the specific market failure or security gap identified, with written justification); <strong>transparent process</strong> (public intent statement, competitive-market impact assessment); and <strong>clear objectives</strong> (measurable outcomes with a mandatory sunset clock and performance review). Congressional notification required within 30 days; judicial review available to affected private parties. Prevents the interagency body itself from becoming a vehicle for unchecked executive discretion as the constraint applies to the coordinating body as much as to individual agencies.</div>
+          </div>
+        </div>
+        <div class="dd-flow-arrow">↓</div>
+        <div class="dd-flow-row">
+          <div class="dd-flow-node" style="flex:1; border-top:3px solid var(--accent); background:var(--tag-bg);">
+            <div class="dd-flow-tag" style="color:var(--accent);">Outcome</div>
+            <div class="dd-flow-name" style="color:var(--accent);">Integrated Strategic Framework</div>
+            <div class="dd-flow-desc">The interagency body coordinates all five authorities into coherent operational strategy. Allies are co-investors and co-designers, not just recipients of U.S. policy. The private sector operates under a clear, published intent framework — following the spirit, not just the letter, of policy. PSIRS ensures every private-sector intervention clears the scope, transparency, and objectives test before deployment. The architecture constrains executive discretion structurally — not merely by norm.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- §5 CONCLUSION -->
+    <div class="dd-section">
+      <div class="dd-section-rule"><span>05 — Conclusion</span></div>
+      <h3 class="dd-h3">The Political Foundation and Honest Caveats</h3>
+
+      <h3>Domestic Distribution as Political Foundation</h3>
+      <p>No grand strategy survives without a domestic political coalition to sustain it. Foreign economic policy should generate distributional benefits that build and sustain that coalition.</p>
+      <p>CHIPS-style programs do not merely produce semiconductors. They produce manufacturing jobs in competitive congressional districts, union labor agreements that make organized labor a stakeholder in the strategy, and regional economic development that gives local political elites an interest in the framework's continuation.</p>
+      <p>The protection of critical infrastructure and supply chains is politically legible across the spectrum: it is about protecting American jobs and national security, not abstract geopolitical competition.</p>
+
+      
+
+      <div class="dd-caveat-expander caveat-red" onclick="toggleExpand(this)">
+        <div class="dd-caveat-expander-header">
+          <span class="dd-caveat-expander-tag">⚠ Honest Caveat — Polarization Risk</span>
+          <span class="dd-caveat-expander-chevron">▼</span>
+        </div>
+        <div class="dd-caveat-expander-body">
+          <div class="dd-caveat-expander-body-inner">
+            <p>The framework assumes a baseline of legislative functionality that the current polarization environment does not guarantee. the new agency requires authorizing legislation; expanded DFC capacity requires appropriations; CHIPS-style programs require sustained multi-year funding commitments that are vulnerable to budget negotiations.</p>
+            <p>The honest assessment is that grand strategy coherence is easier to describe than to institutionalize in a divided government context. The recommendation is nonetheless that the attempt must be made — because the alternative, continued ad hoc improvisation, is demonstrably inferior even when it is more politically convenient. The costs of incoherence compound over time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dd-caveat-expander caveat-green" onclick="toggleExpand(this)">
+        <div class="dd-caveat-expander-header">
+          <span class="dd-caveat-expander-tag">⚠ Honest Caveat — The Limits of State Capitalism</span>
+          <span class="dd-caveat-expander-chevron">▼</span>
+        </div>
+        <div class="dd-caveat-expander-body">
+          <div class="dd-caveat-expander-body-inner">
+            <p>The Offense pillar's industrial policy instruments carry a structural risk: overuse. Government intervention works best when it is narrow in scope, transparent in process, and clear in its objectives. Where competitive market forces exist, attempts to set prices, designate national champions, or acquire government stakes in firms tend to inflate costs, weaken competitive pressure, and crowd out other contenders.</p>
+            <p>The rare-earths case represents one of the narrow exceptions where direct government championing of individual firms is justified: China's complete cornering of a small, strategically critical market with no competitive forces at work. That logic does not extend to the semiconductor industry, a nearly $1 trillion competitive market. The goal of the Offense pillar is to reinforce the dynamism of open markets — not to replace it with the discretionary whims of politicians.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dd-card-grid" style="margin-top:2rem;">
+        <div class="dd-card dd-card-warn">
+          <div class="dd-card-icon">★</div>
+          <strong>Core Recommendation</strong>
+          <p>Adopt the Defense-Offense framework as the organizing logic for economic security policy. Establish the new agency by statute. Differentiate the alliance tier model in operational agreements. Fund the Offense pillar's distributional mandate as political infrastructure, not as a concession.</p>
+        </div>
+        <div class="dd-card dd-card-blue">
+          <div class="dd-card-icon">📈</div>
+          <strong>Metrics for Success</strong>
+          <p>Reduction in single-point supply chain vulnerabilities; increase in Tier 1/2 ally export control harmonization; measurable BRI displacement in targeted strategic corridors; bipartisan legislative support indicating distributional mandate is working.</p>
+        </div>
+        <div class="dd-card dd-card-green">
+          <div class="dd-card-icon">⏱</div>
+          <strong>Time Horizon</strong>
+          <p>The framework is designed for a 10–15 year horizon. Near-term goals in 2–3 years: new agency establishment, updated allies agreements to provide political momentum for longer-term institutionalization.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /deepdive-panel -->
+   
+</section>
+
+<script>
+  // Generic expand/collapse toggle (tiers, ps-boxes, caveats)
+  function toggleExpand(el) {
+    el.classList.toggle('open');
+  }
+
+  // Map tooltips
+  function showMapTip(event, el) {
+    const tip = document.getElementById('mapTooltip');
+    const title = el.getAttribute('data-title');
+    const desc = el.getAttribute('data-desc');
+    const type = el.getAttribute('data-type');
+    const colors = { us: '#4a9edd', vuln: '#e05252', shared: '#f0c040' };
+    tip.innerHTML = `<strong style="color:${colors[type] || '#fff'}">${title}</strong>${desc}`;
+    tip.style.display = 'block';
+
+    const wrapper = el.closest('.map-svg-wrapper');
+    const rect = wrapper.getBoundingClientRect();
+    const svgRect = wrapper.querySelector('svg').getBoundingClientRect();
+    const cx = parseFloat(el.querySelector('circle').getAttribute('cx'));
+    const cy = parseFloat(el.querySelector('circle').getAttribute('cy'));
+    const svgWidth = 900; const svgHeight = 440;
+    const scaleX = svgRect.width / svgWidth;
+    const scaleY = svgRect.height / svgHeight;
+    let left = (cx * scaleX) + 12;
+    let top = (cy * scaleY) - 10;
+    if (left + 210 > svgRect.width) left = cx * scaleX - 215;
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
+  }
+  function hideMapTip() {
+    const tip = document.getElementById('mapTooltip');
+    if (tip) tip.style.display = 'none';
+  }
+
+  // Timeline toggle
+  function toggleTL(el) {
+    const wasActive = el.classList.contains('active');
+    document.querySelectorAll('.tl-item').forEach(i => i.classList.remove('active'));
+    if (!wasActive) el.classList.add('active');
+  }
+
+  // Chokepoint item toggle
+  function toggleCP(el) {
+    const wasOpen = el.classList.contains('open');
+    // close all in same panel
+    el.closest('.cp-panel').querySelectorAll('.cp-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) el.classList.add('open');
+  }
+
+  // Tab switching
+  function switchTab(btn, panelId) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(panelId).classList.add('active');
+  }
+
+  // Pillar toggle
+  function togglePillar(el) {
+    const wasOpen = el.classList.contains('open');
+    document.querySelectorAll('.pillar').forEach(p => p.classList.remove('open'));
+    if (!wasOpen) el.classList.add('open');
+  }
+
+  // Deep-dive panel toggle
+  function toggleDeepDive(trigger) {
+    const panel = document.getElementById('deepDivePanel');
+    const isOpen = panel.classList.contains('open');
+    if (isOpen) {
+      panel.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    } else {
+      panel.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+      if (!panel.dataset.heatmapRendered) {
+        renderDDHeatmap();
+        panel.dataset.heatmapRendered = 'true';
+      }
+    }
+  }
+
+  // Deep-dive heatmap (light theme)
+  function renderDDHeatmap() {
+    const tools = ['Export Controls','CFIUS Screening','Sanctions (OFAC)','Outbound Invest.','CHIPS-style Policy','DFC Finance','Sec. 301/232','Alliance Integration','Standards Bodies'];
+    const objectives = ['Tech Denial','Supply Chain','Fin. Coercion','Market Influence','Ally Cohesion','Domestic Jobs'];
+    const intensityData = [
+      [4,2,1,0,2,0],[3,3,0,0,1,0],[1,1,4,2,1,0],[4,2,0,0,1,0],
+      [1,4,0,2,3,4],[0,1,0,4,3,2],[0,1,3,3,1,1],[2,3,1,2,4,1],[1,1,0,4,4,0],
+    ];
+    const labels = ['None','Low','Moderate','Strong','Critical'];
+    const colors = ['#e8e8e8','#b8d4ea','#6aaed6','#d4ac0d','#c0392b'];
+    const container = document.getElementById('dd-heatmap');
+    if (!container) return;
+    const cellSize = Math.min(54, Math.floor((container.offsetWidth - 160) / objectives.length));
+    let html = '<div style="overflow-x:auto;"><table style="border-collapse:separate;border-spacing:3px;font-family:Arial,sans-serif;">';
+    html += '<tr><th style="width:145px;"></th>';
+    objectives.forEach(obj => {
+      html += '<th style="font-size:0.58rem;color:#888;text-transform:uppercase;letter-spacing:0.04em;text-align:center;padding:0 2px 6px;width:'+cellSize+'px;vertical-align:bottom;"><div style="writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;">'+obj+'</div></th>';
+    });
+    html += '</tr>';
+    tools.forEach((tool,ti) => {
+      html += '<tr><td style="font-size:0.68rem;color:#555;text-align:right;padding-right:8px;white-space:nowrap;vertical-align:middle;">'+tool+'</td>';
+      objectives.forEach((obj,oi) => {
+        const val = intensityData[ti][oi];
+        html += '<td style="padding:0;"><div style="width:'+cellSize+'px;height:'+cellSize+'px;background:'+colors[val]+';border-radius:3px;cursor:default;" title="'+tool+' \xd7 '+obj+': '+labels[val]+'"></div></td>';
+      });
+      html += '</tr>';
+    });
+    html += '</table></div>';
+    container.innerHTML = html;
+  }
+
+  // Render heatmap on load (panel is always visible)
+  document.addEventListener('DOMContentLoaded', function() {
+    renderDDHeatmap();
+  });
+  // Fallback if DOM already loaded
+  if (document.readyState !== 'loading') {
+    renderDDHeatmap();
+  }
+</script>
+
+</body>
+</html>
+
